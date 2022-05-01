@@ -9,6 +9,12 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+export const getServerSideProps = async (context) => {
+	return {
+		props: {},
+	};
+};
+
 const Index = () => {
 	const { auth } = useContext(AuthContext);
 	const [urlData, setUrlData] = useState({
