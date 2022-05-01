@@ -1,0 +1,11 @@
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+#myJumbotron {
+	height: 643px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

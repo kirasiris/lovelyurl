@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import "@/css/app.css";
+import "@/css/bootstrap.min.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import { AuthProvider } from "@/helpers/globalContext";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
-export default MyApp
+const myApp = ({ Component, pageProps }) => {
+	return (
+		<AuthProvider>
+			<Component {...pageProps} />
+			<ToastContainer />
+		</AuthProvider>
+	);
+};
+
+export default myApp;
