@@ -16,10 +16,10 @@ const error = ({ statusCode, router }) => {
 						? `An error ${statusCode} occurred on server`
 						: "An error occurred on client"}
 				</p>
-				<Link href={`/`}>
+				<Link href={`/`} passHref>
 					<a className={`btn btn-sm btn-dark mr-1`}>Go Home!</a>
 				</Link>
-				<Link href={`#!`}>
+				<Link href={`#!`} passHref>
 					<a onClick={handlePrev} className={`btn btn-sm btn-dark`}>
 						Go Back!
 					</a>
