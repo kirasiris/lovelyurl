@@ -4,13 +4,14 @@ import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
 import { APP_NAME, APP_DESCRIPTION, PUBLIC_URL } from "@/config";
 import AuthContext from "@/helpers/globalContext";
+import ScreenShot from "@/screenshot";
 
 const Layout = ({
 	title = `${APP_NAME}`,
 	description = `${APP_DESCRIPTION}`,
-	postImage = ``,
-	imageWidth = `1873`,
-	imageHeight = `900`,
+	postImage = `${ScreenShot.src}`,
+	imageWidth = `${ScreenShot.width}`,
+	imageHeight = `${ScreenShot.height}`,
 	videoWidth = "1873",
 	videoHeight = "900",
 	card = "",

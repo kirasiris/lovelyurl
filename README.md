@@ -1,6 +1,6 @@
 # Welcome to beFree
 
-![LovelyUrl - Shorten your URLs](screenshot.jpeg)
+![LovelyUrl - Shorten your URLs](screenshot.png)
 
 [![wakatime](https://wakatime.com/badge/github/kirasiris/befree.svg)](https://wakatime.com/badge/github/kirasiris/befree)
 Time Spent in a Project over all time
@@ -10,7 +10,7 @@ Time Spent in a Project over all time
 
 ## To Uninstall/Update Packages in this Repository
 
-`npm uninstall next react react-bootstrap react-dom react-toastify uuid`
+`npm uninstall axios next react react-bootstrap react-dom react-toastify uuid`
 
 ## Important
 
