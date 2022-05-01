@@ -1,6 +1,6 @@
 # Welcome to beFree
 
-![LovelyUrl - Shorten your URLs](screenshot.png)
+![LovelyUrl - Shorten your URLs](screenshot.jpeg)
 
 [![wakatime](https://wakatime.com/badge/github/kirasiris/befree.svg)](https://wakatime.com/badge/github/kirasiris/befree)
 Time Spent in a Project over all time
