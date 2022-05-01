@@ -16,7 +16,9 @@ const About = () => {
 			</Row>
 			<hr />
 			<Row>
-				<Content fullWidth></Content>
+				<Content fullWidth>
+					Just a website that shortens URLs from the web
+				</Content>
 			</Row>
 		</Layout>
 	);

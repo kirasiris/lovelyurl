@@ -12,9 +12,9 @@ const Footer = (props) => {
 					<Link href={`/`} passHref>
 						<a className={`text-white mr-1`}>{APP_NAME}</a>
 					</Link>
-					<i className={`fa fa-code mr-1`} id={`fa-code`} />
+					<i className={`fa fa-code mr-1`} id={`fa-code`} aria-hidden />
 					made with
-					<i className={`fa fa-heart ml-1 mr-1`} id={`fa-heart`} />
+					<i className={`fa fa-heart ml-1 mr-1`} id={`fa-heart`} aria-hidden />
 					&#38; &#9749; by
 					<a
 						href={KEVINFONSECA_URL}

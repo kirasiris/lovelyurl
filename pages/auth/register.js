@@ -70,7 +70,7 @@ const Register = ({ router }) => {
 							<InputGroup>
 								<div className="input-group-prepend">
 									<InputGroup.Text id="username-text">
-										<i className="fas fa-user" />
+										<i className="fas fa-user" aria-hidden />
 									</InputGroup.Text>
 								</div>
 								<Form.Control
@@ -93,7 +93,7 @@ const Register = ({ router }) => {
 							<InputGroup>
 								<div className="input-group-prepend">
 									<InputGroup.Text id="email-text">
-										<i className="fas fa-envelope" />
+										<i className="fas fa-envelope" aria-hidden />
 									</InputGroup.Text>
 								</div>
 								<Form.Control
@@ -118,7 +118,7 @@ const Register = ({ router }) => {
 							<InputGroup>
 								<div className="input-group-prepend">
 									<InputGroup.Text id="password-text">
-										<i className="fas fa-lock" />
+										<i className="fas fa-lock" aria-hidden />
 									</InputGroup.Text>
 								</div>
 								<Form.Control
@@ -142,7 +142,7 @@ const Register = ({ router }) => {
 							<InputGroup>
 								<div className="input-group-prepend">
 									<InputGroup.Text id="password2-text">
-										<i className="fas fa-lock" />
+										<i className="fas fa-lock" aria-hidden />
 									</InputGroup.Text>
 								</div>
 								<Form.Control

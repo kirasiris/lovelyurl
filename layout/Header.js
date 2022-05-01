@@ -22,7 +22,7 @@ const Header = ({ auth, router }) => {
 				<div className={`container`}>
 					<Link href={`/`} passHref>
 						<a className={`navbar-brand text-white`}>
-							<i className={`fa fa-heart mr-1`} id={`fa-heart`} />
+							<i className={`fa fa-heart mr-1`} id={`fa-heart`} aria-hidden />
 							{APP_NAME}
 						</a>
 					</Link>
@@ -106,7 +106,14 @@ const Header = ({ auth, router }) => {
 				className={`jumbotron bg-danger rounded-0 text-white text-center text-monospace mb-0`}
 				id={`myJumbotron`}
 			>
-				<i className={`fa fa-heart ml-1 fa-10x mr-1`} id={`fa-heart`} />
+				<Link href={`/`} passHref>
+					<i
+						className={`fa fa-heart ml-1 fa-10x mr-1`}
+						id={`fa-heart`}
+						style={{ cursor: `pointer` }}
+						aria-hidden
+					/>
+				</Link>
 			</div>
 		</header>
 	);

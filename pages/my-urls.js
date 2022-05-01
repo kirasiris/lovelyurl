@@ -5,7 +5,6 @@ import { getMyUrls } from "@/actions/url";
 // HELPERS
 import Layout from "@/layout/Layout";
 import Content from "@/layout/Container";
-import Spinner from "@/layout/Spinner";
 import NothingFoundAlert from "@/layout/NothingFoundAlert";
 // REACT-BOOTSTRAP
 import AuthContext from "@/helpers/globalContext";
@@ -15,33 +14,48 @@ import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import privateRoutes from "@/routing/privateRoutes";
 
-const MyUrls = ({ router }) => {
-	const { auth } = useContext(AuthContext);
-	const [loading, setLoading] = useState(true);
-	const [myUrls, setMyUrls] = useState([]);
-	const [next, setNext] = useState(0);
-	const [prev, setPrev] = useState(0);
-	const [page, setPage] = useState(1);
-	const [totalPages, setTotalPages] = useState(0);
-	const [totalResults, setTotalResults] = useState(0);
-	const [, setError] = useState(false);
+export const getServerSideProps = async (context) => {
+	const params = `?user=${context.query.user}&page=${context.query.page}&limit=${context.query.limit}&sort=${context.query.sort}`;
+	const myUrls = (await getMyUrls(params)()) || [];
+	const totalPages = myUrls?.pagination?.totalpages || 0;
+	const totalResults = myUrls?.count || 0;
+	const page = myUrls?.pagination?.current || 1;
+	const next = myUrls?.pagination?.next?.page || 0;
+	const prev = myUrls?.pagination?.prev?.page || 0;
+	const paramsObject = context.query;
+	return {
+		props: {
+			params: params,
+			serverUrls: myUrls?.data || [],
+			totalDocuments: myUrls?.countAll || 0,
+			totalPages: totalPages,
+			totalResults: totalResults,
+			page: page,
+			next: next,
+			prev: prev,
+			paramsObject: paramsObject,
+		},
+	};
+};
 
-	const params = `?user=${auth?.user?._id}&page=${router.query.page}&limit=${router.query.limit}&sort=${router.query.sort}`;
+const MyUrls = ({
+	params,
+	serverUrls,
+	totalDocuments,
+	totalPages,
+	totalResults,
+	page,
+	next,
+	prev,
+	paramsObject,
+	router,
+}) => {
+	const { auth } = useContext(AuthContext);
+
+	const [myUrls, setMyUrls] = useState([]);
 
 	useEffect(() => {
-		getMyUrls(params)()
-			.then((result) => {
-				setMyUrls(result.data);
-				setTotalPages(result.pagination.totalpages);
-				setTotalResults(result.count);
-				setPage(result.pagination.current);
-				setNext(result.pagination?.next?.page);
-				setPrev(result.pagination?.prev?.page);
-				setLoading(false);
-			})
-			.catch((err) => {
-				setError(true);
-			});
+		setMyUrls(serverUrls);
 	}, [params]);
 
 	const nextPage = () => {
@@ -73,7 +87,10 @@ const MyUrls = ({ router }) => {
 	};
 
 	return (
-		<Layout title={`MyUrls`}>
+		<Layout
+			title={`My Urls`}
+			description={`Take a look in all the URLs that you have shortened`}
+		>
 			<Row>
 				<Col xl={`12`}>
 					<h1>These are the Urls created by you</h1>
@@ -82,9 +99,7 @@ const MyUrls = ({ router }) => {
 			<hr />
 			<Row>
 				<Content fullWidth classGiven={`mb-3`}>
-					{loading ? (
-						<Spinner />
-					) : myUrls?.length > 0 ? (
+					{myUrls?.length > 0 ? (
 						<>
 							<Table striped bordered hover responsive>
 								<thead>

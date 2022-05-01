@@ -10,7 +10,7 @@ const CallToAction = ({ classGiven = `` }) => {
 				<Card className={`text-white mb-3`} bg={`danger`}>
 					<Card.Header>Step 1</Card.Header>
 					<Card.Body>
-						<i className={`fas fa-link fa-5x`} />
+						<i className={`fas fa-link fa-5x`} aria-hidden />
 						<hr />
 						<p>Get a link/url</p>
 					</Card.Body>
@@ -20,7 +20,7 @@ const CallToAction = ({ classGiven = `` }) => {
 				<Card className={`text-white mb-3`} bg={`danger`}>
 					<Card.Header>Step 2</Card.Header>
 					<Card.Body>
-						<i className={`fas fa-copy fa-5x`} />
+						<i className={`fas fa-copy fa-5x`} aria-hidden />
 						<hr />
 						<p>Paste it!</p>
 					</Card.Body>
@@ -30,7 +30,7 @@ const CallToAction = ({ classGiven = `` }) => {
 				<Card className={`text-white mb-3`} bg={`danger`}>
 					<Card.Header>Step 3</Card.Header>
 					<Card.Body>
-						<i className={`fas fa-share fa-5x`} />
+						<i className={`fas fa-share fa-5x`} aria-hidden />
 						<hr />
 						<p>Submit it!</p>
 					</Card.Body>

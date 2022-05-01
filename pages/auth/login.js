@@ -73,7 +73,7 @@ const Login = ({ router }) => {
 							<InputGroup>
 								<div className="input-group-prepend">
 									<InputGroup.Text id="email-text">
-										<i className="fas fa-envelope" />
+										<i className="fas fa-envelope" aria-hidden />
 									</InputGroup.Text>
 								</div>
 								<Form.Control
@@ -97,7 +97,7 @@ const Login = ({ router }) => {
 							<InputGroup>
 								<div className="input-group-prepend">
 									<InputGroup.Text id="password-text">
-										<i className="fas fa-lock" />
+										<i className="fas fa-lock" aria-hidden />
 									</InputGroup.Text>
 								</div>
 								<Form.Control

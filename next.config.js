@@ -4,7 +4,7 @@ module.exports = {
 		WEBSITE_NAME: "LovelyUrl",
 		WEBSITE_DESCRIPTION: "Shorten your URLs",
 		WEBSITE_NAME_HTTP_STRING: "lovelyurl",
-		PRODUCTION: false,
+		PRODUCTION: true,
 	},
 	images: {
 		domains: ["gravatar.com", "kevinurielfonseca.me"],
