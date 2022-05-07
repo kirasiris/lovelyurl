@@ -10,18 +10,15 @@ import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 
-export const getServerSideProps = async (context) => {
-	return {
-		props: {},
-	};
-};
-
 const About = () => {
 	useEffect(() => {
 		GitHubCalendar(".calendar", "kirasiris");
 	}, []);
 	return (
-		<Layout title={`About`}>
+		<Layout
+			title={`About`}
+			cssLink={`https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css`}
+		>
 			<Row className="mt-3">
 				<Col xl={`12`}>
 					<h1>Mind to donate?</h1>
