@@ -139,10 +139,11 @@ const MyUrls = ({
 									))}
 								</tbody>
 							</Table>
-							Number of Urls {totalResults}
-							<div className={`float-right`}>
+							<div className="float-start">Number of Urls {totalResults}</div>
+							<div className={`float-end`}>
 								{"Page " + page + " of " + totalPages}
 							</div>
+							<br />
 							<hr />
 							{prevButton()}
 							{nextButton()}

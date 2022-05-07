@@ -28,7 +28,7 @@ const Header = ({ auth, router }) => {
 					</Link>
 					<Navbar.Toggle aria-controls={`basic-navbar-nav`} />
 					<Navbar.Collapse id={`basic-navbar-nav`} className={`text-uppercase`}>
-						<Nav className={`mr-auto`}>
+						<Nav className={`me-auto`}>
 							<Link href={`/`} passHref>
 								<a
 									className={`nav-link text-white`}

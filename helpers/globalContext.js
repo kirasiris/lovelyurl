@@ -11,8 +11,6 @@ export const AuthProvider = ({ children }) => {
 		user: null,
 	});
 
-	const [globalSettings, setGlobalSettings] = useState(null);
-
 	useEffect(() => {
 		if (window.localStorage.xAuthToken) {
 			setAuthToken(window.localStorage.xAuthToken);
@@ -26,14 +24,13 @@ export const AuthProvider = ({ children }) => {
 				})
 				.catch((err) => console.log("There was an error loading user"));
 			// Load global settings and make them available through whole application
+		} else {
+			logout()();
 		}
-		window.addEventListener("storage", () => {
-			if (!window.localStorage.xAuthToken) logout()();
-		});
 	}, []);
 
 	return (
-		<AuthContext.Provider value={{ auth, setAuth, globalSettings }}>
+		<AuthContext.Provider value={{ auth, setAuth }}>
 			{children}
 		</AuthContext.Provider>
 	);
