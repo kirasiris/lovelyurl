@@ -4,6 +4,7 @@ import GitHubCalendar from "github-calendar";
 // HELPERS
 import Layout from "@/layout/Layout";
 import UseImage from "@/layout/UseImage";
+import { KEVINFONSECA_URL } from "@/config";
 // REACT-BOOTSTRAP
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -44,9 +45,17 @@ const About = () => {
 					</Carousel>
 					<hr />
 					<p>
-						Hello, my name is Kevin. I&apos;m a 23 years old solo developer who
-						has passion for coding, however, I&apos;m still a student and spend
-						most of my time working full-time in an unrelated industry.
+						Hello, my name is{" "}
+						<a
+							href={KEVINFONSECA_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Kevin
+						</a>
+						. I&apos;m a 23 years old solo developer who has passion for coding,
+						however, I&apos;m still a student and spend most of my time working
+						full-time in an unrelated industry.
 					</p>
 					<p>
 						I would be very greatful if you decide to help me a bit so I can
@@ -55,7 +64,7 @@ const About = () => {
 				</Col>
 			</Row>
 			<hr />
-			<Row className="mb-3 text-center d-none d-sm-none d-md-none d-lg-flex dm-xl-flex">
+			<Row className="text-center d-none d-sm-none d-md-none d-lg-flex dm-xl-flex">
 				<Col xl={`4`}>
 					<a
 						href="https://www.paypal.com/paypalme/kirasiris"
@@ -108,7 +117,8 @@ const About = () => {
 					</a>
 				</Col>
 			</Row>
-			<div className={`calendar`}></div>
+			<hr />
+			<div className={`calendar mb-3`}></div>
 		</Layout>
 	);
 };
