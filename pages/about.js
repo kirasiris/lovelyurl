@@ -10,6 +10,12 @@ import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 
+export const getServerSideProps = async (context) => {
+	return {
+		props: {},
+	};
+};
+
 const About = () => {
 	useEffect(() => {
 		GitHubCalendar(".calendar", "kirasiris");
