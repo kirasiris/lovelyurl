@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import GitHubCalendar from "github-calendar";
 // ACTIONS
 // HELPERS
 import Layout from "@/layout/Layout";
@@ -9,6 +11,9 @@ import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 
 const About = () => {
+	useEffect(() => {
+		GitHubCalendar(".calendar", "kirasiris");
+	}, []);
 	return (
 		<Layout title={`About`}>
 			<Row className="mt-3">
@@ -100,6 +105,7 @@ const About = () => {
 					</a>
 				</Col>
 			</Row>
+			<div className={`calendar`}></div>
 		</Layout>
 	);
 };
