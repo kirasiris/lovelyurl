@@ -64,7 +64,7 @@ const About = () => {
 				</Col>
 			</Row>
 			<hr />
-			<Row className="text-center d-none d-sm-none d-md-none d-lg-flex dm-xl-flex">
+			<Row className="text-center d-lg-flex dm-xl-flex">
 				<Col xl={`4`}>
 					<a
 						href="https://www.paypal.com/paypalme/kirasiris"
