@@ -48,7 +48,7 @@ const Login = ({ router }) => {
 			localStorage.removeItem("email");
 			localStorage.removeItem("password");
 		}
-		login(loginData, router)();
+		await login(loginData, router)();
 	};
 
 	const [passwordShown, setPasswordShown] = useState(false);
