@@ -35,11 +35,7 @@ const Layout = ({
 	return (
 		<>
 			<Head>
-				{title && (
-					<title>
-						{APP_NAME} | {title}
-					</title>
-				)}
+				{title && <title>{APP_NAME + " | " + title}</title>}
 				{description && (
 					<meta name="description" content={`${description}`}></meta>
 				)}
