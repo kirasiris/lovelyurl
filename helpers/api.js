@@ -1,6 +1,6 @@
 import axios from "axios";
-import { toast } from "react-toastify";
 import { API_URL } from "@/config";
+import { logout } from "@/actions/auth";
 
 // HANLDE API REQUESTS
 const api = axios.create({
@@ -17,14 +17,14 @@ const api = axios.create({
 **/
 
 api.interceptors.response.use(
-	(res) => {
+	async (res) => {
 		return res;
 	},
-	(err) => {
+	async (err) => {
 		let res = err?.response;
 
 		if (res?.status === 401 && res?.config && !res?.config?._isRetryRequest) {
-			toast.error("There was an error connecting to the database");
+			await logout()();
 		}
 	}
 );
